@@ -1,0 +1,16 @@
+import java.util.Scanner;
+class main{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int r=sc.nextInt();
+        int Q=0;
+        while(n>=r)
+        {
+            n=n-r;
+            Q++;
+        }
+        System.out.println("The Quotient is: "+Q);
+        System.out.println("The Remainder is: "+n);
+    }
+}
