@@ -1,0 +1,45 @@
+import java.util.Scanner;
+class PrimeNumbers
+{
+   static int a,b;
+    static int num=0;
+   static String  primeNumbers = "";
+   public static void main (String[] args)
+   {
+       int i =0;
+       Scanner sc=new Scanner(System.in);
+       int a=sc.nextInt();
+       int b=sc.nextInt();
+       //Empty String
+     
+// System.out.println("Prime numbers from 1 to 100 are :");
+       
+       for ( i = a; i <= b; i++)        
+       {
+           
+          primeno(i);
+   }
+   int l=primeNumbers.length();
+   //System.out.println("length is :"+l);
+   System.out.println("The prime Numbers Between "+a+" and"+b+" is " +primeNumbers.substring(0,l-1));
+   }
+  static void primeno(int i)
+  {
+   int counter=0;  
+          for(num =i; num>=1; num--)
+ {
+             if(i%num==0)
+    {
+  counter = counter + 1;
+    }
+ }
+ if (counter ==2)
+ {
+    //Appended the Prime number to the String
+    primeNumbers = primeNumbers + i + ",";
+ }
+ 
+       }
+     
+
+}
