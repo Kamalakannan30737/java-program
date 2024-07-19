@@ -1,0 +1,53 @@
+import java.util.Scanner;
+public class PositiveNegativeSeparator {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int N=sc.nextInt();
+        int[] arr=new int[N];
+        for(int i=0;i<arr.length;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
+        
+      System.out.println("Original Array:");
+       printArray(arr);
+        
+        separatePositiveNegative(arr);
+        
+        System.out.println("\nArray after Separation:");
+        printArray(arr);
+    }
+    
+    
+   private static void printArray(int[] arr) {
+       for (int num : arr) {
+         System.out.print(num + " ");
+      }
+        System.out.println();
+    }
+    
+    // Method to separate positive and negative numbers in the array
+    private static void separatePositiveNegative(int[] arr) {
+        int left = 0;
+        int right = arr.length - 1;
+        
+        while (left <= right) {
+            if (arr[left] < 0 && arr[right] >= 0) {
+                // Swap arr[left] and arr[right]
+                int temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;
+                left++;
+                right--;
+            } else {
+                if (arr[left] >= 0) {
+                    left++;
+                }
+                if (arr[right] < 0) {
+                    right--;
+                }
+            }
+        }
+    }
+}
