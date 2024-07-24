@@ -1,0 +1,29 @@
+class chocolate{
+    private int barcode,weight,cost;
+    private String name;
+    chocolate(){
+        barcode=101;
+        name="CADBURY";
+        weight=12;
+        cost=10;
+    }
+    chocolate(int abarcode,String aname,int aweight,int acost){
+        barcode=abarcode;
+        name=aname;
+        weight=aweight;
+        cost=acost;
+    }
+    void displaydetails(){
+        System.out.println("The BARCODE : "+barcode);
+        System.out.println("The NAME  : "+name);
+        System.out.println("The WEIGHT : "+weight);
+        System.out.println("The COST : "+cost);
+    }
+    public static void main(String[]args){
+        chocolate ch=new chocolate();
+        chocolate ch1=new chocolate(102,"HERSHEY'S",24,50);
+        ch.displaydetails();
+        System.out.println("************ THE NEW **************");
+        ch1.displaydetails();
+    }
+}
