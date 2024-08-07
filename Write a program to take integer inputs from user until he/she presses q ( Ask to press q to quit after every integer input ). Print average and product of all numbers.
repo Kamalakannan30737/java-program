@@ -1,0 +1,41 @@
+import java.util.*;
+
+public class W03_P4 {
+    public static void main(String[] args) {
+        String choice = "";
+        Scanner input = new Scanner(System.in);
+
+        // Variables to store the sum, product, and count of numbers
+        int sum = 0;
+        int product = 1;
+        int count = 0;
+
+        while (true) {
+            System.out.print("Enter an integer (or press 'q' to quit): ");
+            choice = input.nextLine();
+
+            if (choice.equalsIgnoreCase("q")) {
+                break; // Exit the loop if the user inputs 'q'
+            }
+
+            try {
+                int number = Integer.parseInt(choice); // Convert input to integer
+                sum += number; // Add number to sum
+                product *= number; // Multiply number to product
+                count++; // Increment the count of numbers
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter an integer or 'q' to quit.");
+            }
+        }
+
+        if (count > 0) { // Check if there were valid numbers entered
+            double average = (double) sum / count; // Calculate average
+            System.out.println("Average: " + average);
+            System.out.println("Product: " + product);
+        } else {
+            System.out.println("No numbers were entered.");
+        }
+
+        input.close(); // Close the scanner
+    }
+}
